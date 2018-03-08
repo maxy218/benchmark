@@ -2,6 +2,12 @@ TEST_COPTS = [
     "-pedantic",
     "-pedantic-errors",
     "-std=c++11",
+    "-Wall",
+    "-Wextra",
+    "-Wshadow",
+#    "-Wshorten-64-to-32",
+    "-Wfloat-equal",
+    "-fstrict-aliasing",
 ]
 
 PER_SRC_COPTS = ({
@@ -42,5 +48,4 @@ cc_library(
         "@com_google_googletest//:gtest",
     ] + (
         ["@com_google_googletest//:gtest_main"] if (test_src[-len("gtest.cc"):] == "gtest.cc") else []
-    ),
-) for test_src in glob(["*test.cc"])]
+    ),) for test_src in glob(["*test.cc"])]

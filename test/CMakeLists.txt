@@ -156,7 +156,8 @@ if (BENCHMARK_ENABLE_GTEST_TESTS)
     add_test(${name} ${name})
   endmacro()
 
-  add_gtest(statistics_test)
+  add_gtest(benchmark_gtest)
+  add_gtest(statistics_gtest)
 endif(BENCHMARK_ENABLE_GTEST_TESTS)
 
 
