@@ -50,7 +50,7 @@ cc_library(
 
         ["@com_google_googletest//:gtest_main"] if (test_src[-len("gtest.cc"):] == "gtest.cc") else []
     ),
-# FIXME: Add support for assembly tests to bazel.
-# See Issue #556
-# https://github.com/google/benchmark/issues/556
-) for test_src in glob(["*test.cc"])], exclude = ["*_assembly_test.cc"])]
+  # FIXME: Add support for assembly tests to bazel.
+  # See Issue #556
+  # https://github.com/google/benchmark/issues/556
+  ) for test_src in glob(["*test.cc"], exclude = ["*_assembly_test.cc"])]
